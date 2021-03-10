@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <style>
+            .backGround {
+                background-image: url(background.jpg);
+                width: 100%;
+                height: 100%;
+            }
+        </style>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <div class="backGround">
+    <body>
+        <div class="backGround">
+            <form action="">
+                <input type="button" value="right" onclick="moveRight();" /><br>
+                <input style="font-size: 14pt;" type="button" value="left" onclick="moveLeft();"/><br>
+                <input  type="button" value="bottom" onclick="moveBottom();" /><br>
+                <input type="button" value="top" onclick="moveTop();" /><br>
+                <img
+                    src="mario-right.PNG"
+                    alt="picture"
+                    style="width: 10%"
+                    id="myImage"
+                /><br />
+            </form>
+            <script>
+                var mario = null;
+                mario = document.getElementById("myImage");
+                function init() {
+                    mario = document.getElementById("myImage");
+                    mario.style.position = "relative";
+                    mario.style.left = "0px";
+                    mario.style.top = "0px";
+                }
+                function moveRight() {
+                    mario.src = "mario-right.PNG";
+                    mario.style.left = parseInt(mario.style.left) + 10 + "px";
+                }
+                function moveLeft() {
+                    mario.src = "mario-left.PNG";
+                    mario.style.left = parseInt(mario.style.left) - 10 + "px";
+                }
+                function moveBottom() {
+                    mario.style.top = parseInt(mario.style.top) + 10 + "px";
+                }
+                function moveTop() {
+                    mario.style.top = parseInt(mario.style.top) - 10 + "px";
+                }
+                window.onload = init;
+            </script>
+    </body>
+</div>
+</html>
