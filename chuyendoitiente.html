@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <form>
+            <div>
+                <p style="font-family: cursive">
+                    Amount<br />
+                    <input type="text" id="moneyt" style="height: 20pt" />
+                </p>
+            </div>
+            <div
+                style="
+                    margin-left: 230pt;
+                    margin-top: -55pt;
+                    font-family: cursive;
+                "
+            >
+                <p>
+                    From Currency <br />
+                    <select id="fromCurrency" style="width: 80pt; height: 25pt">
+                        <option value="VND">VND</option>
+                        <option value="USD">USD</option>
+                    </select>
+                </p>
+            </div>
+            <div
+                style="
+                    margin-left: 410pt;
+                    margin-top: -55pt;
+                    font-family: cursive;
+                "
+            >
+                <p>
+                    To Currency <br />
+                    <select id="toCurrency" style="width: 80pt; height: 25pt">
+                        <option value="VND">VND</option>
+                        <option value="USD">USD</option>
+                    </select>
+                </p>
+            </div>
+            <div style="margin-left: 515pt; margin-top: -36pt">
+                <button
+                    style="
+                        font-family: cursive;
+                        height: 24pt;
+                        background-color: cornflowerblue;
+                        color: aliceblue;
+                    "
+                    type="button"
+                    onclick="myfunciton()"
+                >
+                    Covert
+                </button>
+            </div>
+            <p id="tien"></p>
+        </form>
+        <script>
+            function myfunciton() {
+                var money = document.getElementById("moneyt").value;
+                var fromcurrency = document.getElementById("fromCurrency")
+                    .value;
+                var tocurrency = document.getElementById("toCurrency").value;
+                debugger;
+                if (fromcurrency == "VND") {
+                    if (tocurrency == "VND") {
+                        document.getElementById("tien").innerHTML =
+                            money * 1 + " " + "VND";
+                    } else {
+                        document.getElementById("tien").innerHTML =
+                            money / 23000 + " " + "USD";
+                    }
+                } else if (tocurrency == "VND") {
+                    document.getElementById("tien").innerHTML =
+                        money * 23000 + " " + "VND";
+                } else {
+                    document.getElementById("tien").innerHTML =
+                        money * 1 + " " + "VND";
+                }
+            }
+        </script>
+    </body>
+</html>
