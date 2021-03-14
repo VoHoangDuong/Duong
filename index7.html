@@ -8,11 +8,14 @@
     </head>
     <body>
         <script>
-            var i = 1;
-            while (i <= 100) {
-                document.write("<hr width = " + i + "%>");
-                i++;
+            var n = parseInt(prompt("Nhập vào số N :"));
+            var sum = 0;
+            while (n != -1) {
+                n = parseInt(prompt("Nhập vào số N :"));
+                alert(n);
+                sum = sum + n;
             }
+            alert(sum);
         </script>
     </body>
 </html>
